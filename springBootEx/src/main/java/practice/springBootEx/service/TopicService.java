@@ -28,6 +28,19 @@ public class TopicService {
 	public void addTopic(Topic topic) {
 		topics.add(topic);
 		
+	} 
+
+	public void updateTopic(Topic topic, String id) {
+		topics.stream().filter(t -> t.getId().equals(id)).forEach(t -> {
+			t.setName(topic.getName());
+			t.setDescription(topic.getDescription());
+		});
+		
+	}
+
+	public void delete(String id) {
+		topics.removeIf(t -> t.getId().equals(id));
+		
 	}
 
 }
