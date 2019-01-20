@@ -35,12 +35,15 @@ public class TopicController {
 		topicService.addTopic(topic);
 	}
 	
-	/*
-	 * @PutMapping("/topics/{id}") public void updateTopic(@RequestBody Topic
-	 * topic, @PathVariable String id) { // converts the json in request body to
-	 * topic instance topicService.updateTopic(topic, id); }
-	 * 
-	 * @DeleteMapping("/topics/{id}") public void deleteTopic(@PathVariable String
-	 * id) { topicService.delete(id); }
-	 */
+	
+	  @PutMapping("/topics/{id}") 
+	  public void updateTopic(@RequestBody Topic topic, @PathVariable String id) { // converts the json in request body to topic instance 
+	  topicService.updateTopic(topic, id); 
+	  }
+	  
+	  @DeleteMapping("/topics/{id}") 
+	  public void deleteTopic(@PathVariable String id) { 
+		  topicService.delete(id); 
+		}
+	 
 }
